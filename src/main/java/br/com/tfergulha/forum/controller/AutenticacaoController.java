@@ -17,11 +17,11 @@ import br.com.tfergulha.forum.controller.form.LoginForm;
 
 @Controller
 @RequestMapping("/auth")
-@Profile("prod")
+@Profile(value = {"prod", "test"})
 public class AutenticacaoController {
 
-    private AuthenticationManager authenticationManager;
-    private TokenService tokenService;
+    private final AuthenticationManager authenticationManager;
+    private final TokenService tokenService;
 
     @Autowired
     public AutenticacaoController(AuthenticationManager authenticationManager,
